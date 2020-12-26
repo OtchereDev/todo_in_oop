@@ -10,6 +10,7 @@ todo_form.addEventListener('submit', e => {
         const todoObject = new Todo(todo)
         todoObject.addTodo()
         localStorage.setItem(todo, todo)
+        todo_form.todo.value = ''
     }
 })
 
