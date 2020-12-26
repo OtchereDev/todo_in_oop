@@ -11,7 +11,5 @@ class Todo {
     addTodo() {
         todo_list.innerHTML += this.createTodo()
     }
-    deleteTodo(e) {
-        e.target.parentElement.parentElement.remove()
-    }
+
 }
