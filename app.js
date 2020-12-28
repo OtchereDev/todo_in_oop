@@ -36,24 +36,25 @@ function addTodoLS(todo) {
 }
 
 // delete Todo from LS
-// function TodoLSDelete(todos, todo_text) {
-//     const todo_lists = JSON.parse(todos)
-//     console.log(todo_lists)
-//     todo_lists.forEach((todo, idx) => {
-//         if (todo.trim() === todo_text.trim()) {
-//             const index = idx;
-//             todo_lists.splice(index, index)
-//             localStorage.setItem('todo', JSON.stringify(todo_lists))
-//                 // console.log(todo)
 
-//         } else {
+function TodoLSDelete(todo_text) {
 
 
-//         }
+    if (localStorage.getItem('todo') !== null) {
+        const LSTodo = JSON.parse(localStorage.getItem('todo'))
+        LSTodo.forEach((todo, idx) => {
+            if (todo.trim() === todo_text.trim()) {
+                const index = idx;
+                LSTodo.splice(index, 1)
 
-//     })
 
-// }
+            }
+        })
+        localStorage.setItem('todo', JSON.stringify(LSTodo))
+
+    }
+
+}
 
 todo_form.addEventListener('submit', e => {
     e.preventDefault()
@@ -69,8 +70,8 @@ todo_form.addEventListener('submit', e => {
 
 todo_list.addEventListener('click', e => {
     if (e.target.tagName === 'A') {
-        // TodoLSDelete(localStorage.getItem('todo'),
-        //     e.target.parentElement.parentElement.textContent.slice(0, -1))
+        TodoLSDelete(
+            e.target.parentElement.parentElement.textContent.slice(0, -1))
         e.target.parentElement.parentElement.remove()
     }
 })
