@@ -69,3 +69,11 @@ body .container ul li {
     font-weight: 700;
     margin-top: 1%;
 }
+
+#filter {
+    margin-top: 10%;
+}
+
+.filter {
+    display: none !important;
+}
