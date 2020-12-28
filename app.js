@@ -22,7 +22,7 @@ function addTodoLS(todo) {
 
     if (localStorage.getItem('todo') !== null) {
         const LSTodo = JSON.parse(localStorage.getItem('todo'))
-        console.log(LSTodo)
+
         LSTodo.push(todo)
         localStorage.setItem('todo', JSON.stringify(LSTodo))
 
@@ -69,10 +69,11 @@ todo_form.addEventListener('submit', e => {
 })
 
 todo_list.addEventListener('click', e => {
-    if (e.target.tagName === 'A') {
+    if (e.target.tagName === 'I') {
         TodoLSDelete(
-            e.target.parentElement.parentElement.textContent.slice(0, -1))
+            e.target.parentElement.parentElement.textContent)
         e.target.parentElement.parentElement.remove()
+
     }
 })
 

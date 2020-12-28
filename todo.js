@@ -5,7 +5,7 @@ class Todo {
         this.todo = todo
     }
     createTodo() {
-        const html = `<li> ${this.todo} <span><a href="#">X</a></span></li>`
+        const html = `<li> ${this.todo} <a href="#"><i class="fas fa-trash-alt"></i></a></li>`
         return html
     }
     addTodo() {
